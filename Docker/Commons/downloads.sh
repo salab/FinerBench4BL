@@ -1,0 +1,11 @@
+mkdir _archives/Commons
+wget -O _archives/Commons/CODEC.tar "https://sourceforge.net/projects/irblsensitivity/files/Commons/CODEC.tar"
+wget -O _archives/Commons/COLLECTIONS.tar "https://sourceforge.net/projects/irblsensitivity/files/Commons/COLLECTIONS.tar"
+wget -O _archives/Commons/COMPRESS.tar "https://sourceforge.net/projects/irblsensitivity/files/Commons/COMPRESS.tar"
+wget -O _archives/Commons/CONFIGURATION.tar "https://sourceforge.net/projects/irblsensitivity/files/Commons/CONFIGURATION.tar"
+wget -O _archives/Commons/CRYPTO.tar "https://sourceforge.net/projects/irblsensitivity/files/Commons/CRYPTO.tar"
+wget -O _archives/Commons/CSV.tar "https://sourceforge.net/projects/irblsensitivity/files/Commons/CSV.tar"
+wget -O _archives/Commons/IO.tar "https://sourceforge.net/projects/irblsensitivity/files/Commons/IO.tar"
+wget -O _archives/Commons/LANG.tar "https://sourceforge.net/projects/irblsensitivity/files/Commons/LANG.tar"
+wget -O _archives/Commons/MATH.tar "https://sourceforge.net/projects/irblsensitivity/files/Commons/MATH.tar"
+wget -O _archives/Commons/WEAVER.tar "https://sourceforge.net/projects/irblsensitivity/files/Commons/WEAVER.tar"
