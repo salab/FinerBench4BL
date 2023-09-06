@@ -120,6 +120,8 @@ Copy the modified scripts you want to put into the container
 - download.sh, launcher.sh, Subjects.py
   - Scripts are executed in each container—scripts are different for each project.
 
+---
+
 ## Related Publication
 
 If you use or mention this tool in a scientific publication, we would appreciate citations to the following paper:
