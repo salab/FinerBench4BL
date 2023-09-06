@@ -119,3 +119,21 @@ Copy the modified scripts you want to put into the container
   - Called within build.sh.
 - download.sh, launcher.sh, Subjects.py
   - Scripts are executed in each container—scripts are different for each project.
+
+## Related Publication
+
+If you use or mention this tool in a scientific publication, we would appreciate citations to the following paper:
+
+Shizuka Tsumita, Shinpei Hayashi, and Sousuke Amasaki: "Large-scale evaluation of method-level bug localization with FinerBench4BL". In Proceedings of the 30th IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER 2023), pages 815–824, mar 2023. DOI: https://doi.org/10.1109/SANER56733.2023.00094 / Preprint: https://arxiv.org/abs/2302.14293
+
+```
+ @inproceedings{tsumita-saner2023,
+     author = {Shizuka Tsumita and Shinpei Hayashi and Sousuke Amasaki},
+     title = {Large-Scale Evaluation of Method-Level Bug Localization with {FinerBench4BL}},
+     booktitle = {Proceedings of the 30th IEEE International Conference on Software Analysis, Evolution and Reengineering},
+     pages = {815--824},
+     year = 2023,
+     month = {mar},
+     doi = {10.1109/SANER56733.2023.00094}
+ }
+```
