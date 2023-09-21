@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Tsumita
+    given-names: Shizuka
+title: FinerBench4BL
+url: https://github.com/salab/FinerBench4BL
+preferred-citation:
+  type: conference-paper
+  authors:
+    - family-names: Tsumita
+      given-names: Shizuka
+    - family-names: Hayashi
+      given-names: Shinpei
+    - family-names: Amasaki
+      given-names: Sousuke
+  doi: 10.1109/SANER56733.2023.00094
+  collection-type: proceedings
+  collection-title: "Proceedings of the 30th IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER 2023)"
+  title: "Large-scale evaluation of method-level bug localization with FinerBench4BL"
+  start: 815
+  end: 824
+  year: 2023
+  month: 3
