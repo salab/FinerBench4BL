@@ -384,8 +384,8 @@ class XLSResultAll(XLSbasic):
 		for ver,bugId in self.S.answers[_project].items():
 			ev = Evaluator(self.TYPE, _tech, _group, _project, ver)
 			ev.load(resultFiles)
+			print('%s - %s'%(_project, ver))
 			ev.evaluate(bugId, len(self.S.bugs[_project][ver]), _isFile)
-
 			self.fill_SummarySheet(self.summarySheet, _group, _tech, _project + ver, ev.projectSummary, self.S.sources[_project]['max'], len(self.S.bugs[_project][ver]), len(ev.bugSummaries))
 			if ver == 'all':
 				self.fill_bugDataSheet(self.bugSheet, _tech, _group, _project, ev.bugSummaries, self.S.answers[_project]['all'])
@@ -436,8 +436,15 @@ def getargs():
 	import argparse
 	parser = argparse.ArgumentParser(description='')
 	parser.add_argument('-f', dest='file', default=False, action='store_true', help='file ver results')
+	parser.add_argument('-n', dest='name', default=None, help='name of input directory')
 
 	args = parser.parse_args()
+
+	# 入力ディレクトリを指定しない場合はreturn
+	if args.name is None:
+		parser.print_help()
+		return None
+
 	return args
 
 ###############################################################################################################
@@ -446,7 +453,10 @@ def getargs():
 if __name__ == "__main__":
 	args = getargs()
 
-	name = u'test'
+	if args is None:
+		exit(1)
+
+	name = args.name
 	obj = XLSResultAll(u'/mnt/exp/Bench4BL/expresults/Result_%s.xlsx' % name)
 	obj.run(name, _isUnion=False, _featureFile=None, _isFile=args.file)
 

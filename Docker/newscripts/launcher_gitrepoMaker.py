@@ -32,12 +32,14 @@ class Launcher(object):
 
     def executeHistorege(self, gitrepo, gitrepo_file, isDigest):
         options =""
-	if not isDigest:
-		options = u'--no-classes --no-fields --no-original --method-ext=.java --parsable --unqualify'
-	else:
-		options = u'--no-classes --no-fields --no-original --method-ext=.java --parsable --unqualify --digest-params'
-        command = u'java -jar /mnt/exp/git-stein/build/libs/git-stein-all.jar Historage -o %s %s %s' % (gitrepo, options, gitrepo_file)
-        commands = command.split(u' ')
+        if not isDigest:
+            options = u'--no-classes --no-fields --no-original --method-ext=.java --parsable --unqualify'
+        else:
+            options = u'--no-classes --no-fields --no-original --method-ext=.java --parsable --unqualify --digest-params'
+            command = u'java -jar /mnt/exp/git-stein/build/libs/git-stein-all.jar Historage -o %s %s %s' % (gitrepo, options, gitrepo_file)
+            #If it does not work with, update the command to ↓ because the version of Hisorinc is different.
+            # command = u'java -jar /mnt/exp/git-stein/build/libs/git-stein.jar %s -o %s @historage-jdt %s' % (gitrepo_file, gitrepo, options)
+            commands = command.split(u' ')
         try:
             #subprocess.call(commands, cwd=_cwd, shell=False) #, stdout=self.log, stderr=self.log)
             p = subprocess.Popen(commands, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=False, cwd=self.ProgramPATH)

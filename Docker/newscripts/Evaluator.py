@@ -121,13 +121,15 @@ class Evaluator():
 			else:
 				continue
 
-		self.projectSummary.top1P  = (self.projectSummary.top1 / float(_bugcnt)) if _bugcnt > 0 else 0
-		self.projectSummary.top5P  = (self.projectSummary.top5 / float(_bugcnt)) if _bugcnt > 0 else 0
-		self.projectSummary.top10P = (self.projectSummary.top10 / float(_bugcnt)) if _bugcnt > 0 else 0
+		print(len(self.bugSummaries))
+		recommendedBugCnt = len(self.bugSummaries)
+		self.projectSummary.top1P  = (self.projectSummary.top1 / float(recommendedBugCnt)) if recommendedBugCnt > 0 else 0
+		self.projectSummary.top5P  = (self.projectSummary.top5 / float(recommendedBugCnt)) if recommendedBugCnt > 0 else 0
+		self.projectSummary.top10P = (self.projectSummary.top10 / float(recommendedBugCnt)) if recommendedBugCnt > 0 else 0
 		for i in range(len(self.projectSummary.topkLoc)):
-			self.projectSummary.topkLocP[i] = (self.projectSummary.topkLoc[i] / float(_bugcnt)) if _bugcnt > 0 else 0
-		self.projectSummary.MAP    = (self.projectSummary.MAP / float(_bugcnt)) if _bugcnt > 0 else 0
-		self.projectSummary.MRR    = (self.projectSummary.MRR / float(_bugcnt)) if _bugcnt > 0 else 0
+			self.projectSummary.topkLocP[i] = (self.projectSummary.topkLoc[i] / float(recommendedBugCnt)) if recommendedBugCnt > 0 else 0
+		self.projectSummary.MAP    = (self.projectSummary.MAP / float(recommendedBugCnt)) if recommendedBugCnt > 0 else 0
+		self.projectSummary.MRR    = (self.projectSummary.MRR / float(recommendedBugCnt)) if recommendedBugCnt > 0 else 0
 		pass
 
 	def load(self, _files):
@@ -158,6 +160,9 @@ class Evaluator():
 			version = self.getVersion(filename)
 			for columns in line_iterator(filename):
 				bid = int(columns[0])
+				# if (version,bid) not in [('COLLECTIONS_3_0', 384), ('COLLECTIONS_4_0', 512)]:
+				# 	print('exclude bug id=%s' % bid)
+				# 	continue
 				if bid not in self.rawData:
 					self.rawData[bid] = []
 				if columns[3]=='NaN':
