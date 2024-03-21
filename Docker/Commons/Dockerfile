@@ -39,8 +39,7 @@ RUN git clone https://github.com/sh5i/git-stein.git
 WORKDIR /git-stein
 
 # Historage
-RUN cp gradle.properties-sample gradle.properties
-RUN ./gradlew shadowJar
+RUN  ./gradlew executableJar
 
 # 作業ディレクトリの変更
 WORKDIR /Bench4BL
